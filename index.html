@@ -10,12 +10,10 @@
 body {
   margin:0; padding:0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display:flex; justify-content:center; align-items:center;
-  min-height:100vh; flex-direction:column;
   background: linear-gradient(-45deg,#6a11cb,#2575fc,#ff0080,#00ffff);
   background-size: 600% 600%;
   animation:bgUltra 25s ease infinite;
-  overflow:hidden;
+  overflow-x:hidden;   /* منع التحريك العرضي */
 }
 @keyframes bgUltra{
   0%{background-position:0% 50%;}
@@ -23,16 +21,27 @@ body {
   100%{background-position:0% 50%;}
 }
 
+/* ---------- Card Container ---------- */
+.container {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start; /* يخلي المحتوى يبدأ من فوق */
+  align-items:center;
+  padding:40px 15px;
+}
+
 /* ---------- Card ---------- */
 .card {
   backdrop-filter: blur(18px);
   background: rgba(20,0,30,0.7);
   border-radius:30px;
-  padding:45px; max-width:480px; width:90%;
-  box-shadow:0 25px 70px rgba(0,0,0,0.85);
+  padding:35px; max-width:480px; width:100%;
+  box-shadow:0 20px 50px rgba(0,0,0,0.8);
   text-align:center; color:#fff;
   opacity:0; transform:translateY(40px);
   transition:opacity 1s ease, transform 1s ease;
+  margin-bottom:30px;
 }
 .card.show {opacity:1; transform:translateY(0);}
 
@@ -49,19 +58,19 @@ body {
 
 /* ---------- Name & Text ---------- */
 .card h1{
-  font-size:32px; margin:15px 0 10px;
+  font-size:28px; margin:15px 0 10px;
   text-shadow:0 0 10px #0ff;
 }
 .card p{
-  font-size:18px;color:#d0d0d0;margin-bottom:25px;
+  font-size:17px;color:#d0d0d0;margin-bottom:25px;
 }
 
 /* ---------- Links ---------- */
 .links a{
   display:flex; justify-content:center; align-items:center;
   text-decoration:none;color:#fff;
-  padding:15px;margin:10px 0;border-radius:16px;
-  font-size:18px; transition:all 0.4s ease;
+  padding:14px;margin:10px 0;border-radius:14px;
+  font-size:17px; transition:all 0.4s ease;
   background: linear-gradient(135deg,#6a11cb,#2575fc);
   border:2px solid aqua; opacity:0; transform:translateY(20px);
 }
@@ -89,7 +98,7 @@ footer{margin-top:20px;font-size:14px;color:#ddd;}
 .honor-popup.hide{opacity:0; pointer-events:none;}
 .honor-content{
   position:relative;background: linear-gradient(135deg,#6a11cb,#2575fc);
-  padding:40px;border-radius:25px;text-align:center;
+  padding:35px;border-radius:25px;text-align:center;
   box-shadow:0 0 60px rgba(0,0,0,0.8);
   max-width:600px;width:90%;border:2px solid aqua;
   animation:fadeIn 1.2s ease;
@@ -111,22 +120,25 @@ footer{margin-top:20px;font-size:14px;color:#ddd;}
   </div>
 </div>
 
-<!-- Ultra VIP Max 2.0 Card -->
-<div class="card" id="mainCard">
-  <img src="ChatGPT Image 31 أغسطس 2025، 11_58_38 م.png" alt="Your Photo">
-  <h1>Mohammed Rabea</h1>
-  <p>Enter the world – All links here 👇</p>
-  
-  <div class="links" id="linksContainer">
-    <a href="https://wa.me/201234567890" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-    <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-    <a href="https://facebook.com/username" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
-    <a href="https://t.me/username" target="_blank"><i class="fab fa-telegram"></i>Telegram</a>
-    <a href="tel:+201234567890"><i class="fas fa-phone"></i>Call</a>
-    <a href="https://www.snapchat.com/add/username" target="_blank" class="snap"><i class="fab fa-snapchat-ghost"></i>Snapchat</a>
+<!-- Container -->
+<div class="container">
+  <!-- Ultra VIP Max 2.0 Card -->
+  <div class="card" id="mainCard">
+    <img src="ChatGPT Image 31 أغسطس 2025، 11_58_38 م.png" alt="Your Photo">
+    <h1>Mohammed Rabea</h1>
+    <p>Enter the world – All links here 👇</p>
+    
+    <div class="links" id="linksContainer">
+      <a href="https://wa.me/201234567890" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+      <a href="https://instagram.com/username" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+      <a href="https://facebook.com/username" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+      <a href="https://t.me/username" target="_blank"><i class="fab fa-telegram"></i>Telegram</a>
+      <a href="tel:+201234567890"><i class="fas fa-phone"></i>Call</a>
+      <a href="https://www.snapchat.com/add/username" target="_blank" class="snap"><i class="fab fa-snapchat-ghost"></i>Snapchat</a>
+    </div>
+    
+    <footer>Made with 💜 by Mohammed</footer>
   </div>
-  
-  <footer>Made with 💜 by Mohammed</footer>
 </div>
 
 <script>
